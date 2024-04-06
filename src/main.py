@@ -19,7 +19,7 @@ async def create_upload_file(file: UploadFile):
             f.write(bytes_io)
         points = get_point_by_image(file_path)
         os.remove(file_path)
-        return points
+        return {"coordinates": points}
 
     except Exception as e:
         return {"error": str(e)}
