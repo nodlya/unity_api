@@ -1,4 +1,8 @@
 fastapi>=0.68.0
 pydantic>=1.8.0
 uvicorn>=0.15.0
+
 python-multipart    
+numpy~=1.26.4
+opencv-python~=4.9.0.80
+ultralytics~=8.1.43
