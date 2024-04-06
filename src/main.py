@@ -3,7 +3,7 @@ import uuid
 
 from fastapi import FastAPI, UploadFile
 
-from segment_model import get_point_by_image
+from src.segment_model import get_point_by_image
 
 app = FastAPI()
 
