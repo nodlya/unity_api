@@ -5,10 +5,10 @@ from fastapi import FastAPI, UploadFile
 
 from segment_model import get_point_by_image
 
-application = FastAPI()
+app = FastAPI()
 
 
-@application.post("/upload-file/")
+@app.post("/upload-file/")
 async def create_upload_file(file: UploadFile):
     try:
         bytes_io = await file.read()
@@ -20,6 +20,7 @@ async def create_upload_file(file: UploadFile):
             f.write(bytes_io)
         points = get_point_by_image(file_path)
         os.remove(file_path)
+        print(len(points))
         return points
 
     except Exception as e:
